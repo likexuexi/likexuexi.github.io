@@ -8,15 +8,15 @@
     <link href="/2021/11/16/%E5%B8%88%E9%97%A8%E7%AC%91%E8%AF%9D/"/>
     <url>/2021/11/16/%E5%B8%88%E9%97%A8%E7%AC%91%E8%AF%9D/</url>
     
-    <content type="html"><![CDATA[<p>奇怪的笑话</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe><h1 id="魏文侯问扁鹊"><a href="#魏文侯问扁鹊" class="headerlink" title="魏文侯问扁鹊"></a>魏文侯问扁鹊</h1><blockquote><p>可帅问刘合天：“你们光华七子，哪个代码水平最高？”</p><p>刘合天说：“周总最好，成总其次，我最差。”</p><p>可帅甚为不解。</p><p>刘合天解释道：“我周总不等Bug出现就提前预防了，所以名声传不出开发组。成总在Bug出现时顺手解决了，所以名声传不出技术部。我呢，每天像打地鼠一样到处救火，所以在班里没人不知道我。”</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>奇怪的笑话</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe><h1 id="魏文侯问扁鹊"><a href="#魏文侯问扁鹊" class="headerlink" title="魏文侯问扁鹊"></a>魏文侯问扁鹊</h1><blockquote><p>可帅问刘合天：“你们光华七子，哪个代码水平最高？”</p><p>刘合天说：“周总最好，成总其次，我最差。”</p><p>可帅甚为不解。</p><p>刘合天解释道：“我周总不等Bug出现就提前预防了，所以名声传不出开发组。成总在Bug出现时顺手解决了，所以名声传不出技术部。我呢，每天像打地鼠一样到处救火，所以在班里没人不知道我。”</p></blockquote><h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello World&#x27;</span>)<br></code></pre></div></td></tr></table></figure><h1 id="测试流程图"><a href="#测试流程图" class="headerlink" title="测试流程图"></a>测试流程图</h1><pre><code class="mermaid" >ganttdateFormat  YYYY-MM-DDtitle testsection A sectionCompleted task            :done,    des1, 2014-01-06,2014-01-08Active task               :active,  des2, 2014-01-09, 3dFuture task               :         des3, after des2, 5dFuture task2               :         des4, after des3, 5d</code></pre><h1 id="测试其他"><a href="#测试其他" class="headerlink" title="测试其他"></a>测试其他</h1><p><a class="btn" href="url" title="title">点击这里会什么都不发生</a></p><div>            <input type="checkbox" disabled >普通示例          </div><div>            <input type="checkbox" disabled checked="checked">默认选中          </div>            <input type="checkbox" disabled >内联示例           后面文字不换行<input type="checkbox" disabled > 也可以只传入一个参数，文字写在后边（这样不支持外联<a class="btn" href="url"  title="title" target="_blank">text</a>]]></content>
     
     
-    
-    <tags>
+    <categories>
       
-      <tag>其他</tag>
+      <category>数据预处理</category>
       
-    </tags>
+    </categories>
+    
     
   </entry>
   
