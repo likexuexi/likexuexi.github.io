@@ -4,11 +4,144 @@
   
   
   <entry>
+    <title>数据提取与特征定义</title>
+    <link href="/2021/12/16/0%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E4%B8%8E%E7%89%B9%E5%BE%81%E5%AE%9A%E4%B9%89/"/>
+    <url>/2021/12/16/0%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E4%B8%8E%E7%89%B9%E5%BE%81%E5%AE%9A%E4%B9%89/</url>
+    
+    <content type="html"><![CDATA[<p>在真实的工作中（不是建模比赛），数据往往要在企业的数据湖中提取，如何从原始数据库中有效地提取数据，然后合理地定义Y和X，确保“业务意义-数据逻辑”的合理对应，以及对有价值信息尽量全面的覆盖。</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据预处理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数据探索性分析和预处理</title>
+    <link href="/2021/12/16/1%E6%95%B0%E6%8D%AE%E6%8E%A2%E7%B4%A2%E6%80%A7%E5%88%86%E6%9E%90%E5%92%8C%E9%A2%84%E5%A4%84%E7%90%86/"/>
+    <url>/2021/12/16/1%E6%95%B0%E6%8D%AE%E6%8E%A2%E7%B4%A2%E6%80%A7%E5%88%86%E6%9E%90%E5%92%8C%E9%A2%84%E5%A4%84%E7%90%86/</url>
+    
+    <content type="html"><![CDATA[<p>探索性分析和缺失值/异常值等预处理不能只依赖数据分布特征，必须充分结合数据对应的业务逻辑，最好能回到数据采集环节进行核查/校正</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe><h1 id="直接观察"><a href="#直接观察" class="headerlink" title="直接观察"></a>直接观察</h1><p>不管特征是否进行了脱敏，首先都需要观察哪些特征是定类，哪些是定量，哪些是时间。特征与特征之间是否存在关联，不见得非得是相关系数，比如两个特征数量级差不多，但一个总比另一个更大，如果一个人在多个时间点有记录，可以按照按照时间排序，观察哪些特征是只增不减的累积量（存量）、哪些特征是增量</p><ol><li>确定是截面数据还是面板数据</li><li>每个特征是在<code>定类</code>、<code>定量</code>、<code>时间</code></li><li>特征之间的关联，包含<code>相关系数</code>，<code>数量级类似</code>、<code>总存在大小关系</code></li><li>如果是脱敏的面板数据，可以按照时间排序，观察同一个人下不会变化的<code>固有属性</code>，只增不减的<code>存量</code></li></ol><h1 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h1><p>业务上要看一看</p><ol><li><p>各行均值、期望、最大值、最小值</p><div class="hljs code-wrapper"><pre><code class="hljs python">data.describe()</code></pre></div></li><li><p>啊</p></li></ol><p>技术上要注意</p><ol><li>要留意特征的数据类型，可能会导致bug</li></ol><h1 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h1><h1 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h1><h1 id="异常值处理"><a href="#异常值处理" class="headerlink" title="异常值处理"></a>异常值处理</h1><p>大概有两种处理方式</p><h2 id="视同缺失"><a href="#视同缺失" class="headerlink" title="视同缺失"></a>视同缺失</h2><h2 id="特定值截断"><a href="#特定值截断" class="headerlink" title="特定值截断"></a>特定值截断</h2><h1 id="一览表整合"><a href="#一览表整合" class="headerlink" title="一览表整合"></a>一览表整合</h1><h1 id="相关性分析"><a href="#相关性分析" class="headerlink" title="相关性分析"></a>相关性分析</h1><h1 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h1><h2 id="categorical-merging"><a href="#categorical-merging" class="headerlink" title="categorical merging"></a>categorical merging</h2><h2 id="ont-hot-coding"><a href="#ont-hot-coding" class="headerlink" title="ont-hot coding"></a>ont-hot coding</h2><h2 id="target-coding"><a href="#target-coding" class="headerlink" title="target-coding"></a>target-coding</h2><h1 id="分层建模"><a href="#分层建模" class="headerlink" title="分层建模"></a>分层建模</h1><p>有时候我们的大宽表其实包含了不止一个总体，比如男性喜欢打游戏，女性讨厌打游戏，但是混在一起平均一下得到的结论这个群体既不讨厌也不喜欢打游戏，的到的结论就完全没有意义了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据预处理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>特征工程</title>
+    <link href="/2021/12/16/3%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
+    <url>/2021/12/16/3%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<p>着力重点是从业务和数据两个层面发现和定义与Y具有（全局或局部的）显著相关性的“组合”特征</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据预处理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>变量筛选</title>
+    <link href="/2021/12/16/4%E5%8F%98%E9%87%8F%E7%AD%9B%E9%80%89/"/>
+    <url>/2021/12/16/4%E5%8F%98%E9%87%8F%E7%AD%9B%E9%80%89/</url>
+    
+    <content type="html"><![CDATA[<p>对分类任务，变量粗筛时要注意应该用Information Value还是用Pearson/Spearman Correlation；变量细筛时需要考虑多种方法的结合，包括filter、wrapper、embedding以及不同的模型/算法</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据预处理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>建模准备</title>
+    <link href="/2021/12/16/5%E5%BB%BA%E6%A8%A1%E5%87%86%E5%A4%87/"/>
+    <url>/2021/12/16/5%E5%BB%BA%E6%A8%A1%E5%87%86%E5%A4%87/</url>
+    
+    <content type="html"><![CDATA[<p>使用各种模型/算法前，需要对数据进行适当的处理</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe><h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><p>可以先用逻辑回归做个baseline，但是需要注意的是</p><ol><li>要先处理定类变量，进行WOE化</li></ol><h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><p>对于树模型，有的时候不需要进行特别处理缺失值</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据预处理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>模型调优</title>
+    <link href="/2021/12/16/6%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98/"/>
+    <url>/2021/12/16/6%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98/</url>
+    
+    <content type="html"><![CDATA[<p>俺也不会</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据预处理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>结果评价</title>
+    <link href="/2021/12/16/7%E7%BB%93%E6%9E%9C%E8%AF%84%E4%BB%B7/"/>
+    <url>/2021/12/16/7%E7%BB%93%E6%9E%9C%E8%AF%84%E4%BB%B7/</url>
+    
+    <content type="html"><![CDATA[<p>必须用未作平衡处理、保留原始比例的数据来测试，才能反映真实效果；在反欺诈问题中，AUC、accuracy都不是好的评价标准，更值得考虑的是recall-precision tradeoff；必须考虑是否能有效地指导业务决策</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据预处理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>奇怪的笑话</title>
     <link href="/2021/11/16/%E5%B8%88%E9%97%A8%E7%AC%91%E8%AF%9D/"/>
     <url>/2021/11/16/%E5%B8%88%E9%97%A8%E7%AC%91%E8%AF%9D/</url>
     
-    <content type="html"><![CDATA[<p>奇怪的笑话</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe><h1 id="魏文侯问扁鹊"><a href="#魏文侯问扁鹊" class="headerlink" title="魏文侯问扁鹊"></a>魏文侯问扁鹊</h1><blockquote><p>可帅问刘合天：“你们光华七子，哪个代码水平最高？”</p><p>刘合天说：“周总最好，成总其次，我最差。”</p><p>可帅甚为不解。</p><p>刘合天解释道：“我周总不等Bug出现就提前预防了，所以名声传不出开发组。成总在Bug出现时顺手解决了，所以名声传不出技术部。我呢，每天像打地鼠一样到处救火，所以在班里没人不知道我。”</p></blockquote><h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello World&#x27;</span>)<br></code></pre></div></td></tr></table></figure><h1 id="测试流程图"><a href="#测试流程图" class="headerlink" title="测试流程图"></a>测试流程图</h1><pre><code class="mermaid" >ganttdateFormat  YYYY-MM-DDtitle testsection A sectionCompleted task            :done,    des1, 2014-01-06,2014-01-08Active task               :active,  des2, 2014-01-09, 3dFuture task               :         des3, after des2, 5dFuture task2               :         des4, after des3, 5d</code></pre><h1 id="测试其他"><a href="#测试其他" class="headerlink" title="测试其他"></a>测试其他</h1><p><a class="btn" href="url" title="title">点击这里会什么都不发生</a></p><div>            <input type="checkbox" disabled >普通示例          </div><div>            <input type="checkbox" disabled checked="checked">默认选中          </div>            <input type="checkbox" disabled >内联示例           后面文字不换行<input type="checkbox" disabled > 也可以只传入一个参数，文字写在后边（这样不支持外联<a class="btn" href="url"  title="title" target="_blank">text</a>]]></content>
+    <content type="html"><![CDATA[<p>奇怪的笑话</p><span id="more"></span><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe><h1 id="魏文侯问扁鹊"><a href="#魏文侯问扁鹊" class="headerlink" title="魏文侯问扁鹊"></a>魏文侯问扁鹊</h1><blockquote><p>可帅问刘合天：“你们光华七子，哪个代码水平最高？”</p><p>刘合天说：“周总最好，成总其次，我最差。”</p><p>可帅甚为不解。</p><p>刘合天解释道：“我周总不等Bug出现就提前预防了，所以名声传不出开发组。成总在Bug出现时顺手解决了，所以名声传不出技术部。我呢，每天像打地鼠一样到处救火，所以在班里没人不知道我。”</p></blockquote><h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello World&#x27;</span>)</code></pre></div><h1 id="测试流程图"><a href="#测试流程图" class="headerlink" title="测试流程图"></a>测试流程图</h1><pre><code class="mermaid" >ganttdateFormat  YYYY-MM-DDtitle testsection A sectionCompleted task            :done,    des1, 2014-01-06,2014-01-08Active task               :active,  des2, 2014-01-09, 3dFuture task               :         des3, after des2, 5dFuture task2               :         des4, after des3, 5d</code></pre><h1 id="测试其他"><a href="#测试其他" class="headerlink" title="测试其他"></a>测试其他</h1><p><a class="btn" href="url" title="title">点击这里会什么都不发生</a></p><div>            <input type="checkbox" disabled >普通示例          </div><div>            <input type="checkbox" disabled checked="checked">默认选中          </div>            <input type="checkbox" disabled >内联示例           后面文字不换行<input type="checkbox" disabled > 也可以只传入一个参数，文字写在后边（这样不支持外联<a class="btn" href="url"  title="title" target="_blank">text</a>]]></content>
     
     
     <categories>
